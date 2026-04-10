@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from base64 import b64encode
+import asyncio
 import binascii
 import requests
 import logging
@@ -13,6 +14,7 @@ _LOGGER = logging.getLogger(__name__)
 BROADLINK_CONTROLLER = 'Broadlink'
 XIAOMI_CONTROLLER = 'Xiaomi'
 MQTT_CONTROLLER = 'MQTT'
+TUYA_ZB_CONTROLLER = 'TuyaZb'
 LOOKIN_CONTROLLER = 'LOOKin'
 ESPHOME_CONTROLLER = 'ESPHome'
 
@@ -34,6 +36,7 @@ def get_controller(hass, controller, encoding, controller_data, delay):
         BROADLINK_CONTROLLER: BroadlinkController,
         XIAOMI_CONTROLLER: XiaomiController,
         MQTT_CONTROLLER: MQTTController,
+        TUYA_ZB_CONTROLLER: TuyaZbController,
         LOOKIN_CONTROLLER: LookinController,
         ESPHOME_CONTROLLER: ESPHomeController
     }
@@ -150,6 +153,20 @@ class MQTTController(AbstractController):
 
         await self.hass.services.async_call(
             'mqtt', 'publish', service_data)
+
+
+class TuyaZbController(MQTTController):
+    """Controls a Tuya ZigBee device."""
+
+    async def send(self, command):
+        """Send a command."""
+        service_data = {
+            'topic': self._controller_data,
+            'payload':  f'{{"ir_code_to_send": "{command}"}}'
+        }
+        await self.hass.services.async_call(
+            'mqtt', 'publish', service_data)
+        await asyncio.sleep(float(self._delay))
 
 
 class LookinController(AbstractController):
