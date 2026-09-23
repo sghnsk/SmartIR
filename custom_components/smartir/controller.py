@@ -201,3 +201,4 @@ class ESPHomeController(AbstractController):
 
         await self.hass.services.async_call(
             'esphome', self._controller_data, service_data)
+        await asyncio.sleep(float(self._delay))
