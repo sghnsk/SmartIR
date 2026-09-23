@@ -1,0 +1,50 @@
+{
+  "manufacturer": "Hyundai",
+  "supportedModels": [
+    "H-LED24V8"
+  ],
+  "supportedController": "TuyaZb",
+  "commandsEncoding": "Raw",
+  "commands": {
+    "off": "B4MPgw/0Ac4H4AUDAQIEgAPAC+AHB+AHA+ADN+ALBwFDNw==",
+    "on": "B4MPgw/0Ac4H4AUDAQIEgAPAC+AHB+AHA+ADN+ALBwFDNw==",
+    "previousChannel": "B4MPgw8oApoH4AUDAc0DgAPAC+AHF+AHA+ADH+AHP0ADAYMi",
+    "nextChannel": "B4MPgw/0Ac4H4AUDAecDgAPAC+ADF+ADH+ADJ+ALH8ALAbgi",
+    "volumeDown": "B4MPgw/0AbQH4AUDAecDgAPAC+ALG+ADA+ADG+AHI0APAbgi",
+    "volumeUp": "B4MPgw/0Ac4H4AUDAQIEgAPAC+APH+ADJ+ADK+AHHwG4Ig==",    
+    "mute": "B4MPgw/0Ac4H4AUDAQIEgAPgBxfgBx/gByfgBxfAAwHSIg==",
+    "sources": {
+      "Source": "B4MPgw/0Ac4H4AkDAQIE4AEHwAPgAxvgBwPgAzPgBycBuCI=",
+      "Channel 0": "B4MPgw/0AbQH4AUDAecDgAPgBw/gDwPgDzfAAwG4Ig==",
+      "Channel 1": "B4MPgw8OApoH4AUDAecDgAPgBw/AE+ADD+ALJ+AHSwGeIg==",
+      "Channel 2": "B4MPgw/0AbQH4AUDAecDgAPgCw/AC+ADA+ATN0AHAbgi",
+      "Channel 3": "B4MPgw/0Ac4H4AUDAecDgAPgFw/gHycBuCI=",
+      "Channel 4": "B2gPaA8oAoAH4AUDAbMDgAPgAw/gAxfgBwPgCzfgAxcBgyI=",
+      "Channel 5": "B4MPgw8OApoH4AUDAc0DgAPgAw/gBwfgAwPgCzfgAwcBgyI=",
+      "Channel 6": "B4MPgw/0Ac4H4AUDAQIEgAPgAw/gBxvgAwPgCzfgAwsB0iI=",
+      "Channel 7": "B4MPgw/0AbQH4AUDAecDgAPgAw/gCx/gCyfAD+ADHwG4Ig==",
+      "Channel 8": "B4MPgw8OApoH4AUDAc0DgAPgCxPgCwPgCyPgAzsBniI=",
+      "Channel 9": "B4MPgw8OArQH4AUDAecDgAPgDxPAC+AHJ+APEwGeIg==",
+      "Info": "B4MPgw/0AbQH4AUDAecDgAPgDxfgBwPgDx/AFwG4Ig==",
+      "Return": "B4MPgw/0AbQH4AUDAecDgAPgBwvgBx/gBxvgBwvAAwGeIg==",
+      "Menu": "B4MPgw/0AbQH4AUDAecD4AUD4AsT4Acf4Ac/4AMPAbgi",
+      "Exit": "B2gPaA/0AbQH4AUDAecD4AkD4Bsb4AtDQAsBniI=",
+      "Ok": "B4MPgw/0Ac4H4BUDAecD4AEH4BsD4AMzQAMBuCI=",
+      "Up": "B4MPgw/0AbQH4AUDAecD4AUHwAvgAxfgAwPgBzPgBzcBuCI=",
+      "Down": "B4MPgw/ZAc4H4AUDAQIE4AUHwAvgDwPgBzPgAzdAAwHSIg==",
+      "Left": "B4MPgw/0Ac4H4AUDAecD4A0HwAvgBwPgDzPACwG4Ig==",
+      "Right": "B4MPgw8OApoH4AUDAc0D4A0H4AMf4AMD4A8zwAMBniI=",
+      "Txt": "B4MPgw/0AbQH4AUDAecD4AED4BMb4Asj4AsbAbgi",
+      "Index": "B2gPaA/0AbQH4AUDAecDgAPgBxPgAxvgAwPgBzfgAytABwG4Ig==",
+      "USB": "B4MPgw/0AbQH4AUDAecD4A0D4A8b4Ac/4ANHQAcBuCI=",
+      "Scale": "B4MPgw8OArQH4AkDAecDgAPgAwvgEwPgAzfgB0sBuCI=",
+      "Picture": "B4MPgw/0Ac4H4AUDAecD4AED4AMP4Acb4AMX4AM74AcLAbgi",
+      "Sound": "B4MPgw/0AbQH4AUDAQIE4AUH4AcT4AcD4Asf4AMTAbgi",
+      "Freeze": "B4MPgw8OArQH4AUDAc0D4AUD4A8X4Acf4AcnwA8BniI=",
+      "Red": "B4MPgw/ZAc4H4AUDAQIE4CUD4Ac/4AcDAbgi",
+      "Green": "B2gPaA8oApoH4BEDAc0D4AEH4BsD4AMzwAMBgyI=",
+      "Yellow": "B4MPgw8oApoH4BEDAc0DgAPgAwvgEwPgAzfACwGeIg==",
+      "Blue": "B4MPgw/0AbQH4A0DAecD4AUL4BcD4AMn4ANHAZ4i"
+    }
+  }
+}
