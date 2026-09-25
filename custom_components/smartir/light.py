@@ -384,3 +384,17 @@ class SmartIRLight(LightEntity, RestoreEntity):
             self._on_by_remote = False
             self._power = STATE_OFF
             self.async_write_ha_state()
+
+    async def async_update(self):
+        """Update the state of the light based on the power sensor."""
+        if self._power_sensor is None:
+            return
+
+        power_state = self.hass.states.get(self._power_sensor)
+
+        if power_state:
+            if power_state.state == STATE_OFF:
+                self._power = STATE_OFF
+                self._on_by_remote = False
+            elif power_state.state == STATE_ON:
+                self._power = STATE_ON
