@@ -22,12 +22,13 @@ ENC_BASE64 = 'Base64'
 ENC_HEX = 'Hex'
 ENC_PRONTO = 'Pronto'
 ENC_RAW = 'Raw'
+ENC_NEC = 'Nec'
 
 BROADLINK_COMMANDS_ENCODING = [ENC_BASE64, ENC_HEX, ENC_PRONTO]
 XIAOMI_COMMANDS_ENCODING = [ENC_PRONTO, ENC_RAW]
 MQTT_COMMANDS_ENCODING = [ENC_RAW]
 LOOKIN_COMMANDS_ENCODING = [ENC_PRONTO, ENC_RAW]
-ESPHOME_COMMANDS_ENCODING = [ENC_RAW]
+ESPHOME_COMMANDS_ENCODING = [ENC_RAW, ENC_NEC]
 
 
 def get_controller(hass, controller, encoding, controller_data, delay):
@@ -197,7 +198,17 @@ class ESPHomeController(AbstractController):
     
     async def send(self, command):
         """Send a command."""
-        service_data = {'command':  json.loads(command)}
+        if self._encoding == ENC_NEC:
+            command_parts = command.split(":")
+            if len(command_parts) < 2:
+                raise ValueError("NEC command must be in 'address:command:command_repeat_times' format")
+            service_data = {
+                'address' : int(command_parts[0], 16),
+                'command':  int(command_parts[1], 16),
+                'command_repeat_times': int(command_parts[2]) if len(command_parts) == 3 else 1
+            }
+        else:
+            service_data = {'command':  json.loads(command)}
 
         await self.hass.services.async_call(
             'esphome', self._controller_data, service_data)
